@@ -89,10 +89,8 @@ def main():
     # List all available podcast JSON files from root directory and extract titles
     podcast_files = [f for f in os.listdir(episodesPath)]
     podcast_titles = [get_podcast_title_from_file(f) for f in podcast_files]
-    selected_podcast_title = st.selectbox(
-        "Select a podcast episode:", podcast_titles, index=0)
-    selected_podcast_file = podcast_files[podcast_titles.index(
-        selected_podcast_title)]
+    selected_podcast_title = st.selectbox("Select a podcast episode:", podcast_titles, index=0)
+    selected_podcast_file = podcast_files[podcast_titles.index(selected_podcast_title)]
 
     # Display podcast information when a title is selected
     if selected_podcast_file:
